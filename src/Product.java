@@ -1,3 +1,4 @@
+
 public class Product {
 
     private final Integer id;
