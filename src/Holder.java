@@ -37,4 +37,8 @@ public class Holder {
         this.product = product;
     }
 
+    public String toString() {
+        return product.toString();
+    }
+
 }

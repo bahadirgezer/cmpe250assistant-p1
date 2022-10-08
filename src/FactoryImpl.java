@@ -104,17 +104,27 @@ public class FactoryImpl implements Factory {
         if (!(index >= 0 && index < size))
             throw new IndexOutOfBoundsException("Index: "+index+", Size: "+size);
 
+        Holder x;
         if (index < (size >> 1)) {
-            Holder x = first;
+            x = first;
             for (int i = 0; i < index; i++)
                 x = x.getNextHolder();
-            return x.getProduct();
         } else {
-            Holder x = last;
+            x = last;
             for (int i = size - 1; i > index; i--)
                 x = x.getPreviousHolder();
-            return x.getProduct();
         }
+        return x.getProduct();
+    }
+
+    public String toString() {
+        StringBuilder sb = new StringBuilder("{");
+        for (Holder x = first; x != null; x = x.getNextHolder()) {
+            sb.append(x).append(",");
+        }
+        sb.delete(sb.length()-2, sb.length());
+        sb.append("}");
+        return sb.toString();
     }
 
 }

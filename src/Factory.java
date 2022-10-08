@@ -3,7 +3,7 @@ import java.util.NoSuchElementException;
 public interface Factory {
 
     /**
-     * Insters {@code product} at the begining of this factory line.
+     * Inserts {@code product} at the beginning of this factory line.
      *
      * @param product the product to add
      */

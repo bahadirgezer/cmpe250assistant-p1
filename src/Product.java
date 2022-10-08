@@ -21,4 +21,8 @@ public class Product {
     public void setValue(Integer value) {
         this.value = value;
     }
+
+    public String toString() {
+        return "(" + id + ", " + value + ")";
+    }
 }
