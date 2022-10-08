@@ -120,6 +120,9 @@ public class FactoryImpl implements Factory {
     }
 
     public String toString() {
+        if (size == 0)
+            return "{}";
+
         StringBuilder sb = new StringBuilder("{");
         for (Holder x = first; x != null; x = x.getNextHolder()) {
             sb.append(x).append(",");

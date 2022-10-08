@@ -30,7 +30,6 @@ public class Project1 {
                 G:  get             - "G <index>"
                 P:  print           - "P"
             */
-
             switch (tokens[0]) {
                 case "AF":
                     factory.addFirst(
@@ -56,7 +55,7 @@ public class Project1 {
                         sb.append(p.toString()).append(System.lineSeparator());
 
                     } catch (NoSuchElementException e) {
-                        sb.append("Factory is empty").append(System.lineSeparator());
+                        sb.append("Factory is empty.").append(System.lineSeparator());
                     }
 
                     break;
