@@ -1,16 +1,16 @@
 
 public class Product {
 
-    private final Integer id;
+    private final int id;
 
     private Integer value;
 
-    public Product(Integer id, Integer value) {
+    public Product(int id, Integer value) {
         this.id = id;
         this.value = value;
     }
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 

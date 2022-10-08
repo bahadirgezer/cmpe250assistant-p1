@@ -5,9 +5,9 @@ public class Holder {
 
     private Holder previousHolder;
 
-    private final Product product;
+    private Product product;
 
-    public Holder(Holder nextHolder, Holder previousHolder, Product product) {
+    public Holder(Holder previousHolder, Product product, Holder nextHolder) {
         this.nextHolder = nextHolder;
         this.previousHolder = previousHolder;
         this.product = product;
@@ -31,6 +31,10 @@ public class Holder {
 
     public Product getProduct() {
         return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
     }
 
 }
