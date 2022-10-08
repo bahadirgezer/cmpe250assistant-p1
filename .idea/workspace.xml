@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5231961e-b7f1-41b7-8444-a52a3eda6fa1" name="Changes" comment="Finished main method">
+    <list default="true" id="5231961e-b7f1-41b7-8444-a52a3eda6fa1" name="Changes" comment="Finished main method and did project inspection.">
+      <change afterPath="$PROJECT_DIR$/input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/output.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Factory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Factory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FactoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FactoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Holder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Holder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Project1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Project1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +26,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectId" id="2Fqr0YoWohXne12PelaBQjoLlAm" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -47,6 +47,16 @@
     "settings.editor.selected.configurable": "editor.preferences.fonts.default"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="P1_ARGS_RUN" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Project1" />
+      <module name="CMPE250_P1" />
+      <option name="PROGRAM_PARAMETERS" value="&quot;input.txt&quot; &quot;output.txt&quot;" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -55,7 +65,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1665230236263</updated>
-      <workItem from="1665230237859" duration="12350000" />
+      <workItem from="1665230237859" duration="13198000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1665230615497</created>
@@ -78,7 +88,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665239083354</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Finished main method and did project inspection.">
+      <created>1665242894246</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1665242894246</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -100,7 +117,8 @@
     <MESSAGE value="Added required functions to Factory interface" />
     <MESSAGE value="finished FactoryImpl" />
     <MESSAGE value="Finished main method" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished main method" />
+    <MESSAGE value="Finished main method and did project inspection." />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished main method and did project inspection." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

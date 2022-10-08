@@ -91,7 +91,9 @@ public class FactoryImpl implements Factory {
             if (x.getProduct() == null)
                 continue;
             if (x.getProduct().getId() == id) {
-                final Product p = x.getProduct();
+                final Product p = new Product(
+                        x.getProduct().getId(),
+                        x.getProduct().getValue());
                 x.getProduct().setValue(value);
                 return p;
             }
@@ -122,7 +124,7 @@ public class FactoryImpl implements Factory {
         for (Holder x = first; x != null; x = x.getNextHolder()) {
             sb.append(x).append(",");
         }
-        sb.delete(sb.length()-2, sb.length());
+        sb.delete(sb.length()-1, sb.length());
         sb.append("}");
         return sb.toString();
     }
