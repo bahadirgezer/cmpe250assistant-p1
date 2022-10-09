@@ -1,5 +1,5 @@
 
-# CMPE250 - Fall 2022 - Project 1 Assistant Work
+# CMPE250 - Algorithms and Data Structures - Fall 2022 - Project 1
 
 
 <table>

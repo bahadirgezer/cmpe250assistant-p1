@@ -41,4 +41,16 @@ public class Holder {
         return product.toString();
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Holder holder = (Holder) o;
+
+        if (nextHolder != null ? !nextHolder.equals(holder.nextHolder) : holder.nextHolder != null) return false;
+        if (previousHolder != null ? !previousHolder.equals(holder.previousHolder) : holder.previousHolder != null)
+            return false;
+        return product != null ? product.equals(holder.product) : holder.product == null;
+    }
 }

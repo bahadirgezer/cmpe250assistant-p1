@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5231961e-b7f1-41b7-8444-a52a3eda6fa1" name="Changes" comment="updated README">
-      <change afterPath="$PROJECT_DIR$/src/FactoryImplTest.java" afterDir="false" />
+    <list default="true" id="5231961e-b7f1-41b7-8444-a52a3eda6fa1" name="Changes" comment="Refactored project structure.">
+      <change afterPath="$PROJECT_DIR$/src/test/resources/data.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMPE250_P1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CMPE250_P1.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FactoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FactoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/desc/Project_1_CmpE_250__Data_Structures_and_Algorithms__Fall_2022.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/desc/Project_1_CmpE_250__Data_Structures_and_Algorithms__Fall_2022.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Holder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Holder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/FactoryImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/FactoryImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +31,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2Fqr0YoWohXne12PelaBQjoLlAm" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -63,6 +66,12 @@
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/java" />
+      <recent name="$PROJECT_DIR$/src/test" />
+      <recent name="$PROJECT_DIR$/src/main/java" />
+      <recent name="$PROJECT_DIR$/src/main" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="" />
@@ -105,7 +114,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1665230236263</updated>
-      <workItem from="1665230237859" duration="34586000" />
+      <workItem from="1665230237859" duration="44219000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1665230615497</created>
@@ -170,7 +179,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665305397455</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Refactored project structure.">
+      <created>1665314950786</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1665314950786</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -198,7 +214,8 @@
     <MESSAGE value="Description added." />
     <MESSAGE value="README change" />
     <MESSAGE value="updated README" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated README" />
+    <MESSAGE value="Refactored project structure." />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored project structure." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
