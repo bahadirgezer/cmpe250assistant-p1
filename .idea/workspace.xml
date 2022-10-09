@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5231961e-b7f1-41b7-8444-a52a3eda6fa1" name="Changes" comment="README change">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="5231961e-b7f1-41b7-8444-a52a3eda6fa1" name="Changes" comment="updated README">
+      <change afterPath="$PROJECT_DIR$/src/FactoryImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.tex" beforeDir="false" afterPath="$PROJECT_DIR$/P1.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMPE250_P1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CMPE250_P1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FactoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FactoryImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +17,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -36,9 +38,16 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "create.test.in.the.same.root": "true",
     "last_opened_file_path": "/Users/gezer/_boun/5.Donem/250Assistant/project1/revisions/CMPE250_P1",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
@@ -52,8 +61,14 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="" />
+    </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.FactoryImplTest.initializeFactory">
     <configuration name="P1_ARGS_RUN" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Project1" />
       <module name="CMPE250_P1" />
@@ -62,6 +77,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="FactoryImplTest.initializeFactory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CMPE250_P1" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="FactoryImplTest" />
+      <option name="METHOD_NAME" value="initializeFactory" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.P1_ARGS_RUN" />
+      <item itemvalue="JUnit.FactoryImplTest.initializeFactory" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.FactoryImplTest.initializeFactory" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -71,7 +105,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1665230236263</updated>
-      <workItem from="1665230237859" duration="31014000" />
+      <workItem from="1665230237859" duration="34586000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1665230615497</created>
@@ -129,7 +163,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665303671809</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="updated README">
+      <created>1665305397455</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1665305397455</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -156,7 +197,8 @@
     <MESSAGE value="Minor revisions" />
     <MESSAGE value="Description added." />
     <MESSAGE value="README change" />
-    <option name="LAST_COMMIT_MESSAGE" value="README change" />
+    <MESSAGE value="updated README" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated README" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

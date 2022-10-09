@@ -132,4 +132,16 @@ public class FactoryImpl implements Factory {
         return sb.toString();
     }
 
+    public Holder getFirst() {
+        return first;
+    }
+
+    public Holder getLast() {
+        return last;
+    }
+
+    public Integer getSize() {
+        return size;
+    }
+
 }
