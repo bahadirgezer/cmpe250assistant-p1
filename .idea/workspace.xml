@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5231961e-b7f1-41b7-8444-a52a3eda6fa1" name="Changes" comment="Description added." />
+    <list default="true" id="5231961e-b7f1-41b7-8444-a52a3eda6fa1" name="Changes" comment="README change">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.tex" beforeDir="false" afterPath="$PROJECT_DIR$/P1.tex" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,6 +39,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/gezer/_boun/5.Donem/250Assistant/project1/revisions/CMPE250_P1",
+    "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -42,6 +48,11 @@
     "settings.editor.selected.configurable": "editor.preferences.fonts.default"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="P1_ARGS_RUN" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Project1" />
@@ -60,7 +71,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1665230236263</updated>
-      <workItem from="1665230237859" duration="29276000" />
+      <workItem from="1665230237859" duration="31014000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1665230615497</created>
@@ -111,7 +122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665303384532</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="README change">
+      <created>1665303671809</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1665303671809</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -137,7 +155,8 @@
     <MESSAGE value="Fixed problem in update() method" />
     <MESSAGE value="Minor revisions" />
     <MESSAGE value="Description added." />
-    <option name="LAST_COMMIT_MESSAGE" value="Description added." />
+    <MESSAGE value="README change" />
+    <option name="LAST_COMMIT_MESSAGE" value="README change" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
