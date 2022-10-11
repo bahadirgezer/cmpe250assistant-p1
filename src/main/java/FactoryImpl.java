@@ -1,4 +1,4 @@
-import javax.swing.*;
+import java.util.HashSet;
 import java.util.NoSuchElementException;
 
 public class FactoryImpl implements Factory {
@@ -115,46 +115,44 @@ public class FactoryImpl implements Factory {
     }
 
     @Override
-    public boolean removeProduct(Product product) throws NoSuchElementException {
-        if (product == null) {
-            for (Holder x = first; x != null; x = x.getNextHolder()) {
-                if (x.getProduct() == null) {
-                    unlink(x);
-                    return true;
-                }
-            }
-        } else {
-            for (Holder x = first; x != null; x = x.getNextHolder()) {
-                if (product.equals(x.getProduct())) {
-                    unlink(x);
-                    return true;
-                }
+    public Product removeProduct(int value) {
+        for (Holder x = first; x != null; x = x.getNextHolder()) {
+            if (x.getProduct().getValue() == value) {
+                unlink(x);
+                return x.getProduct();
             }
         }
-        return false;
+        throw new NoSuchElementException();
     }
 
     @Override
     public int filterDuplicates() {
-
+        HashSet<Integer> values = new HashSet<>();
+        int removed = 0;
         for (Holder x = first; x != null; x = x.getNextHolder()) {
-
+            if (values.contains(x.getProduct().getValue())) {
+                unlink(x);
+                removed++;
+            } else {
+                values.add(x.getProduct().getValue());
+            }
         }
-
-        return 0;
+        return removed;
     }
 
     @Override
-    public void reverse() { //TODO: wrong implementation check this!
-        Holder temp = null;
+    public void reverse() {
+        final Holder f = first;
+        Holder temp;
+
         for (Holder x = first; x != null; x = x.getNextHolder()) {
             temp = x.getPreviousHolder();
             x.setPreviousHolder(x.getNextHolder());
             x.setNextHolder(temp);
         }
-        if (temp != null)
-            first = temp.getPreviousHolder();
 
+        first = last;
+        last = f;
     }
 
     @Override

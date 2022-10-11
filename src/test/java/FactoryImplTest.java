@@ -5,8 +5,6 @@ import org.junit.jupiter.params.provider.MethodSource;
 import java.util.NoSuchElementException;
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 
 /*
     addFirst        empty factory
@@ -273,7 +271,7 @@ public class CalculatorTest {
   }
 
   @RunWith(Parameterized.class)
-  public static class SubstractTest {
+  public static class SubtractTest {
 
     @Parameters
     public static Collection<Object[]> data() {
@@ -291,7 +289,7 @@ public class CalculatorTest {
 
     @Test
     public void testSubstract() {
-      assertEquals(expected, Calculator.substract(a, b));
+      assertEquals(expected, Calculator.subtract(a, b));
     }
   }
 

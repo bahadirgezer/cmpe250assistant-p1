@@ -130,17 +130,15 @@ public class Project1 {
                     break;
                 case "RP":
                     try {
-                        Boolean p = factory.removeProduct(
-                                new Product(
-                                        Integer.parseInt(tokens[1]),
-                                        Integer.parseInt(tokens[2])
-                                )
-                        ); //TODO: fix this conversion from product to boolean
+                        Product p = factory.removeProduct(
+                                Integer.parseInt(tokens[1])
+                        );
                         sb.append(p.toString()).append(System.lineSeparator());
 
                     } catch (NoSuchElementException e) {
-                        sb.append(productNotFound);
+                        sb.append(productNotFound).append(System.lineSeparator());
                     }
+
                     break;
                 case"FD":
                     sb.append(factory.filterDuplicates()).append(System.lineSeparator());

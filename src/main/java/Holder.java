@@ -41,6 +41,7 @@ public class Holder {
         return product.toString();
     }
 
+    @SuppressWarnings("EqualsReplaceableByObjectsCall")
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

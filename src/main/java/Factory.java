@@ -72,17 +72,21 @@ public interface Factory {
     Product removeIndex(int index) throws IndexOutOfBoundsException;
 
     /**
-     * Removes the first occurrence of the specified product from this
-     * factory line, if it is present. If this factory line does not
-     * contain the product, it is unchanged. More formally, removes
-     * the product with the lowest index {@code i} such that {@code
-     * product.equals(this.get(i))}.
+     * Removes the first occurrence of the {@code product} with the
+     * specified {@code value} from this factory line. If this factory
+     * line does not contain a product with the specified {@code value},
+     * it is unchanged. More formally, removes the {@code product} with the
+     * lowest index {@code i} such that {@code product.getValue() == value}.
      *
-     * @param product product to be removed from this factory line, if present
+     * @param value value of the {@code product} to be removed from
+     *              this factory line, if present
      * @return the removed {@code product}
-     * @throws NoSuchElementException if the product does not exist
+     * @throws NoSuchElementException if the product with the given
+     *              {@code value} does not exist
+     *
+     *
      */
-    boolean removeProduct(Product product) throws NoSuchElementException;
+    Product removeProduct(int value) throws NoSuchElementException;
 
     /**
      * Filters the factory line such that every duplicate product is removed.

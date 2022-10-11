@@ -1,6 +1,7 @@
 
 public class Product {
 
+    //Unique identifier
     private final int id;
 
     private Integer value;
