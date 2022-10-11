@@ -33,7 +33,7 @@ public class Project1 {
                 G:  get                 - "G <index>"
                 P:  print               - "P"
                 RI: removeIndex         - "RI <index>"
-                RP: removeProduct       - "RP <product_id> <product_value" -> ! <value> not necessary
+                RP: removeProduct       - "RP <product_value>"
                 FD: filterDuplicates    - "FD"
                 R:  reverse             - "R"
                 A:  add                 - "A <index> <product_id> <product_value>"
@@ -70,8 +70,7 @@ public class Project1 {
                 case "RL":
                     try {
                         Product p = factory.removeLast();
-                        sb.append(p.toString());
-                        sb.append(System.lineSeparator());
+                        sb.append(p.toString()).append(System.lineSeparator());
 
                     } catch (NoSuchElementException e) {
                         sb.append(factoryIsEmpty).append(System.lineSeparator());
@@ -146,6 +145,7 @@ public class Project1 {
                     break;
                 case"R":
                     factory.reverse();
+                    sb.append(factory).append(System.lineSeparator());
 
                     break;
                 case "A":

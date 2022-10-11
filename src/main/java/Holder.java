@@ -38,7 +38,7 @@ public class Holder {
     }
 
     public String toString() {
-        return product.toString();
+        return (product == null) ? "Holder empty." : product.toString() ;
     }
 
     @SuppressWarnings("EqualsReplaceableByObjectsCall")

@@ -118,8 +118,9 @@ public class FactoryImpl implements Factory {
     public Product removeProduct(int value) {
         for (Holder x = first; x != null; x = x.getNextHolder()) {
             if (x.getProduct().getValue() == value) {
+                Product product = x.getProduct();
                 unlink(x);
-                return x.getProduct();
+                return product;
             }
         }
         throw new NoSuchElementException();
@@ -131,7 +132,9 @@ public class FactoryImpl implements Factory {
         int removed = 0;
         for (Holder x = first; x != null; x = x.getNextHolder()) {
             if (values.contains(x.getProduct().getValue())) {
+                Holder temp = new Holder(null, null, x.getNextHolder()); // unlink() sets the next holder as null
                 unlink(x);
+                x = temp;
                 removed++;
             } else {
                 values.add(x.getProduct().getValue());
@@ -143,9 +146,10 @@ public class FactoryImpl implements Factory {
     @Override
     public void reverse() {
         final Holder f = first;
-        Holder temp;
+        Holder temp, next;
 
-        for (Holder x = first; x != null; x = x.getNextHolder()) {
+        for (Holder x = first; x != null; x = next) {
+            next = x.getNextHolder(); // otherwise we lose the nextHolder
             temp = x.getPreviousHolder();
             x.setPreviousHolder(x.getNextHolder());
             x.setNextHolder(temp);

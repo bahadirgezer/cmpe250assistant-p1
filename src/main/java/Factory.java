@@ -62,6 +62,16 @@ public interface Factory {
     Product get(int index) throws IndexOutOfBoundsException;
 
     /**
+     * Insert the {@code product} at the specified position in this factory line.
+     * Shifts the products currently at and to the right of that position.
+     *
+     * @param index index at which the product is to be inserted
+     * @param product the product to be inserted
+     * @throws IndexOutOfBoundsException {@inheritDoc}
+     */
+    void add(int index, Product product) throws IndexOutOfBoundsException;
+
+    /**
      * Removes and returns the product at the specified position in this
      * factory line.
      *
@@ -101,14 +111,5 @@ public interface Factory {
      */
     void reverse();
 
-    /**
-     * Insert the {@code product} at the specified position in this factory line.
-     * Shifts the products currently at and to the right of that position.
-     *
-     * @param index index at which the product is to be inserted
-     * @param product the product to be inserted
-     * @throws IndexOutOfBoundsException {@inheritDoc}
-     */
-    void add(int index, Product product) throws IndexOutOfBoundsException;
 
 }
