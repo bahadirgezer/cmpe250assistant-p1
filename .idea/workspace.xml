@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5231961e-b7f1-41b7-8444-a52a3eda6fa1" name="Changes" comment="Refactored project structure.">
-      <change afterPath="$PROJECT_DIR$/src/test/resources/data.csv" afterDir="false" />
+    <list default="true" id="5231961e-b7f1-41b7-8444-a52a3eda6fa1" name="Changes" comment="Started working on JUnit tests.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/desc/Project_1_CmpE_250__Data_Structures_and_Algorithms__Fall_2022.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/desc/Project_1_CmpE_250__Data_Structures_and_Algorithms__Fall_2022.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Holder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Holder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/FactoryImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/FactoryImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Factory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Factory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/FactoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FactoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Project1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Project1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,27 +36,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "create.test.in.the.same.root": "true",
-    "last_opened_file_path": "/Users/gezer/_boun/5.Donem/250Assistant/project1/revisions/CMPE250_P1",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/gezer/_boun/5.Donem/250Assistant/project1/revisions/CMPE250_P1&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -114,7 +111,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1665230236263</updated>
-      <workItem from="1665230237859" duration="44219000" />
+      <workItem from="1665230237859" duration="46749000" />
+      <workItem from="1665385926264" duration="11573000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1665230615497</created>
@@ -186,7 +184,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665314950786</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Started working on JUnit tests.">
+      <created>1665331416625</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1665331416625</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,7 +220,8 @@
     <MESSAGE value="README change" />
     <MESSAGE value="updated README" />
     <MESSAGE value="Refactored project structure." />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactored project structure." />
+    <MESSAGE value="Started working on JUnit tests." />
+    <option name="LAST_COMMIT_MESSAGE" value="Started working on JUnit tests." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.util.NoSuchElementException;
 
 public class FactoryImpl implements Factory {
@@ -103,10 +104,118 @@ public class FactoryImpl implements Factory {
 
     @Override
     public Product get(int index) throws IndexOutOfBoundsException {
-        if (!(index >= 0 && index < size))
-            throw new IndexOutOfBoundsException("Index: "+index+", Size: "+size);
+        checkProductIndex(index);
+        return node(index).getProduct();
+    }
 
+    @Override
+    public Product removeIndex(int index) throws IndexOutOfBoundsException {
+        checkProductIndex(index);
+        return unlink(node(index));
+    }
+
+    @Override
+    public boolean removeProduct(Product product) throws NoSuchElementException {
+        if (product == null) {
+            for (Holder x = first; x != null; x = x.getNextHolder()) {
+                if (x.getProduct() == null) {
+                    unlink(x);
+                    return true;
+                }
+            }
+        } else {
+            for (Holder x = first; x != null; x = x.getNextHolder()) {
+                if (product.equals(x.getProduct())) {
+                    unlink(x);
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public int filterDuplicates() {
+
+        for (Holder x = first; x != null; x = x.getNextHolder()) {
+
+        }
+
+        return 0;
+    }
+
+    @Override
+    public void reverse() { //TODO: wrong implementation check this!
+        Holder temp = null;
+        for (Holder x = first; x != null; x = x.getNextHolder()) {
+            temp = x.getPreviousHolder();
+            x.setPreviousHolder(x.getNextHolder());
+            x.setNextHolder(temp);
+        }
+        if (temp != null)
+            first = temp.getPreviousHolder();
+
+    }
+
+    @Override
+    public void add(int index, Product product) throws IndexOutOfBoundsException {
+        checkProductIndex(index);
+
+        if (index == size)
+            linkLast(product);
+        else
+            linkBefore(product, node(index));
+    }
+
+    private Product unlink(Holder holder) {
+        final Product product = holder.getProduct();
+        final Holder previousHolder = holder.getPreviousHolder();
+        final Holder nextHolder = holder.getNextHolder();
+
+        if (previousHolder == null)
+            first = nextHolder;
+        else {
+            previousHolder.setNextHolder(nextHolder);
+            holder.setPreviousHolder(null);
+        }
+
+        if (nextHolder == null) {
+            last = previousHolder;
+        } else {
+            nextHolder.setPreviousHolder(previousHolder);
+            holder.setNextHolder(null);
+        }
+
+        holder.setProduct(null);
+        size--;
+        return product;
+    }
+
+    private void linkLast(Product product) {
+        final Holder l = last;
+        final Holder newHolder = new Holder(l, product, null);
+        last = newHolder;
+        if (l == null)
+            first = newHolder;
+        else
+            l.setNextHolder(newHolder);
+        size++;
+    }
+
+    private void linkBefore(Product product, Holder successor) {
+        final Holder predecessor = successor.getPreviousHolder();
+        final Holder newHolder = new Holder(predecessor, product, successor);
+        successor.setPreviousHolder(newHolder);
+        if (predecessor == null)
+            first = newHolder;
+        else
+            predecessor.setNextHolder(newHolder);
+        size++;
+    }
+
+    private Holder node(int index) {
         Holder x;
+
         if (index < (size >> 1)) {
             x = first;
             for (int i = 0; i < index; i++)
@@ -116,7 +225,12 @@ public class FactoryImpl implements Factory {
             for (int i = size - 1; i > index; i--)
                 x = x.getPreviousHolder();
         }
-        return x.getProduct();
+        return x;
+    }
+
+    private void checkProductIndex(int index) {
+        if (!(index >= 0 && index < size))
+            throw new IndexOutOfBoundsException("Index: "+index+", Size: "+size);
     }
 
     public String toString() {

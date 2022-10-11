@@ -61,4 +61,50 @@ public interface Factory {
      */
     Product get(int index) throws IndexOutOfBoundsException;
 
+    /**
+     * Removes and returns the product at the specified position in this
+     * factory line.
+     *
+     * @param index index of the product to remove
+     * @return the removed {@code product}
+     * @throws IndexOutOfBoundsException {@inheritDoc}
+     */
+    Product removeIndex(int index) throws IndexOutOfBoundsException;
+
+    /**
+     * Removes the first occurrence of the specified product from this
+     * factory line, if it is present. If this factory line does not
+     * contain the product, it is unchanged. More formally, removes
+     * the product with the lowest index {@code i} such that {@code
+     * product.equals(this.get(i))}.
+     *
+     * @param product product to be removed from this factory line, if present
+     * @return the removed {@code product}
+     * @throws NoSuchElementException if the product does not exist
+     */
+    boolean removeProduct(Product product) throws NoSuchElementException;
+
+    /**
+     * Filters the factory line such that every duplicate product is removed.
+     * Duplicate products are products with the same value in this context.
+     *
+     * @return number of removed products
+     */
+    int filterDuplicates();
+
+    /**
+     * Reverses the factory line.
+     */
+    void reverse();
+
+    /**
+     * Insert the {@code product} at the specified position in this factory line.
+     * Shifts the products currently at and to the right of that position.
+     *
+     * @param index index at which the product is to be inserted
+     * @param product the product to be inserted
+     * @throws IndexOutOfBoundsException {@inheritDoc}
+     */
+    void add(int index, Product product) throws IndexOutOfBoundsException;
+
 }

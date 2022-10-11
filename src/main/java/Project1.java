@@ -11,6 +11,9 @@ public class Project1 {
                 new FileWriter(args[1]));
         StringBuilder sb = new StringBuilder();
         Factory factory = new FactoryImpl();
+        String factoryIsEmpty = "Factory is empty.";
+        String productNotFound = "Product not found.";
+        String indexOutOfBounds = "Index out of bounds.";
 
         // INPUT
         String line;
@@ -21,14 +24,19 @@ public class Project1 {
                 continue;
 
             /*
-                AF: addFirst        - "AF <product_id> <product_value>"
-                AL: addLast         - "AL <product_id> <product_value>"
-                RF: removeFirst     - "RF"
-                RL: removeLast      - "RL"
-                F:  find            - "F <product_id>"
-                U:  update          - "U <product_id> <updated_value>"
-                G:  get             - "G <index>"
-                P:  print           - "P"
+                AF: addFirst            - "AF <product_id> <product_value>"
+                AL: addLast             - "AL <product_id> <product_value>"
+                RF: removeFirst         - "RF"
+                RL: removeLast          - "RL"
+                F:  find                - "F <product_id>"
+                U:  update              - "U <product_id> <updated_value>"
+                G:  get                 - "G <index>"
+                P:  print               - "P"
+                RI: removeIndex         - "RI <index>"
+                RP: removeProduct       - "RP <product_id> <product_value" -> ! <value> not necessary
+                FD: filterDuplicates    - "FD"
+                R:  reverse             - "R"
+                A:  add                 - "A <index> <product_id> <product_value>"
             */
             switch (tokens[0]) {
                 case "AF":
@@ -55,7 +63,7 @@ public class Project1 {
                         sb.append(p.toString()).append(System.lineSeparator());
 
                     } catch (NoSuchElementException e) {
-                        sb.append("Factory is empty.").append(System.lineSeparator());
+                        sb.append(factoryIsEmpty).append(System.lineSeparator());
                     }
 
                     break;
@@ -66,7 +74,7 @@ public class Project1 {
                         sb.append(System.lineSeparator());
 
                     } catch (NoSuchElementException e) {
-                        sb.append("Factory is empty.").append(System.lineSeparator());
+                        sb.append(factoryIsEmpty).append(System.lineSeparator());
                     }
 
                     break;
@@ -77,7 +85,7 @@ public class Project1 {
                         sb.append(p.toString()).append(System.lineSeparator());
 
                     } catch (NoSuchElementException e) {
-                        sb.append("Product not found.").append(System.lineSeparator());
+                        sb.append(productNotFound).append(System.lineSeparator());
                     }
 
                     break;
@@ -90,7 +98,7 @@ public class Project1 {
                         sb.append(p.toString()).append(System.lineSeparator());
 
                     } catch (NoSuchElementException e) {
-                        sb.append("Product not found.").append(System.lineSeparator());
+                        sb.append(productNotFound).append(System.lineSeparator());
                     }
 
                     break;
@@ -102,11 +110,59 @@ public class Project1 {
                         sb.append(p.toString()).append(System.lineSeparator());
 
                     } catch (IndexOutOfBoundsException e) {
-                        sb.append("Index out of bounds.").append(System.lineSeparator());
+                        sb.append(indexOutOfBounds).append(System.lineSeparator());
                     }
                     break;
                 case "P":
                     sb.append(factory).append(System.lineSeparator());
+
+                    break;
+                case "RI":
+                    try {
+                        Product p = factory.removeIndex(
+                                Integer.parseInt(tokens[1])
+                        );
+                        sb.append(p.toString()).append(System.lineSeparator());
+
+                    } catch (IndexOutOfBoundsException e) {
+                        sb.append(indexOutOfBounds).append(System.lineSeparator());
+                    }
+                    break;
+                case "RP":
+                    try {
+                        Boolean p = factory.removeProduct(
+                                new Product(
+                                        Integer.parseInt(tokens[1]),
+                                        Integer.parseInt(tokens[2])
+                                )
+                        ); //TODO: fix this conversion from product to boolean
+                        sb.append(p.toString()).append(System.lineSeparator());
+
+                    } catch (NoSuchElementException e) {
+                        sb.append(productNotFound);
+                    }
+                    break;
+                case"FD":
+                    sb.append(factory.filterDuplicates()).append(System.lineSeparator());
+
+                    break;
+                case"R":
+                    factory.reverse();
+
+                    break;
+                case "A":
+                    try {
+                        factory.add(
+                                Integer.parseInt(tokens[1]),
+                                new Product(
+                                        Integer.parseInt(tokens[2]),
+                                        Integer.parseInt(tokens[3])
+                                )
+                        );
+
+                    } catch (IndexOutOfBoundsException e) {
+                        sb.append(indexOutOfBounds).append(System.lineSeparator());
+                    }
                     break;
             }
         }
