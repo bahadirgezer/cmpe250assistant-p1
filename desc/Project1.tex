@@ -1,4 +1,4 @@
-\documentclass[12pt]{article}
+\documentclass[10pt]{article}
 \usepackage{fullpage,enumitem,amsmath,amssymb,graphicx}
 \usepackage[T1]{fontenc}
 \usepackage{lipsum}
@@ -15,10 +15,10 @@
 \title{\vspace{-1cm} \Huge Project 1 - Factory\\ \LARGE CmpE 250, Data Structures and Algorithms, Fall 2022 }
 \author{
   Instructor: Özlem Durmaz \.{I}ncel\\
-  TAs: Suzan Ece Ada, Bar{\i}\c{s} Yamansava\c{s}{\i}lar\\
+  TAs: Suzan Ece Ada, Bar{\i}\c{s} Yamansavaşç{\i}lar\\
   SAs:  Batuhan \c{C}elik, Bahad{\i}r Gezer, Zeynep Buse Ayd{\i}n
 }
-\date{Due: 17/10/2022, 23:55 Sharp}
+\date{Due: 21/10/2022, 23:55 Sharp}
 
 
 \begin{document}
@@ -27,31 +27,28 @@
   
   \section{Introduction}
 
-In Rumeli Hisarustu, a factory called CMPE250 Factory produces essential products. In the factory, individual units called holders are responsible for handling the products in the factory line. These holders are connected to each other since the product line must meet the given requirements. You are tasked with the organization of this product line.
+In \textit{Rumeli Hisarüstü}, a factory called \textit{1-A Factory} produces essential products. Every product has their respective value. In the factory, individual units called holders are responsible for handling the products in the factory line. Each holder is coupled with the previous and the next holder to create a product line. You are tasked with the organization of this product line.
 
 \section{Details}
 
- In this project you will be given two classes \texttt{Holder}, \texttt{Product}; and an interface, \texttt{Factory}. You will need to write two new classes \texttt{FactoryImpl}, and \texttt{Project1}. 
+ You will be given two classes \texttt{Holder}, and \texttt{Product}; and an interface, \texttt{Factory}. You need to write two new classes \texttt{FactoryImpl}, and \texttt{Project1}. 
 
 \begin{quote}
     
 \subsection{\Large\textbf{\texttt{FactoryImpl}}}
     \begin{itemize}
     
-    \item The \texttt{Factory} interface should be implemented. The overridden methods should work exactly as described. 
+    \item This class should implement the \texttt{Factory} interface. The overridden methods should work the way they are described in the \texttt{Javadoc}.
     
-    \item This class has three mandatory fields. 
+    \item This class has three mandatory fields. These fields should be correctly modified inside the overriden methods. 
     
 \begin{lstlisting}[language=Java]
-    private Holder first;
-    private Holder last;
-    private Integer size;
+    private Holder first
+    private Holder last
+    private Integer size
 \end{lstlisting}
-        
 
-    \item You can add any helper methods you like.
-    
-    \item Mandatory fields should be correctly modified inside the overridden methods from the \texttt{Factory} interface.
+    \item You are free to add helper methods.
     
     \end{itemize}
 
@@ -59,11 +56,16 @@ In Rumeli Hisarustu, a factory called CMPE250 Factory produces essential product
     \begin{itemize}
 
     \item The main method should be implemented here. This class is the entry point of your program. 
+    
+    \item You are required to read from the input file and write to the output file. These file paths will be given in the program arguments.
+    
+    \item Each input command will be given in a single line. You have to read the input file and write to the output file line by line.
 
     \end{itemize}
     
 \end{quote}
 
+\goodbreak
 \section{Input \& Output}
 
 \begin{quote}
@@ -81,14 +83,19 @@ In Rumeli Hisarustu, a factory called CMPE250 Factory produces essential product
 
 
 \begin{itemize}
-    \item \textbf{Add First - } Adds the product at the beginning of the factory line. \hfill \\ [10pt]
+    
+    \item \textbf{Add First - } Adds a new product at the beginning of the factory line. \hfill \\ [10pt]
     \framebox[6cm][c]{AF\hspace{15pt}product$_{id}$\hspace{15pt}product$_{value}$}
     \vspace{7pt}
     
-    \item \textbf{Add Last - } Adds the product to the end of the factory line. \hfill \\ [10pt]
+    \item \textbf{Add Last - } Adds a new product to the end of the factory line. \hfill \\ [10pt]
     \framebox[6cm][c]{AL\hspace{15pt}product$_{id}$\hspace{15pt}product$_{value}$}
     \vspace{7pt}
-
+    
+    \item \textbf{Add - } Adds a new product to the given \texttt{index} of the factory line. Prints \verb|"Index out of bounds."| if the index is out of bounds.   \hfill \\ [10pt]
+    \framebox[8cm][c]{A\hspace{15pt}index\hspace{15pt}product$_{id}$\hspace{15pt}product$_{value}$}
+    \vspace{7pt}
+    
     \item \textbf{Remove First - } Removes the first product from the factory line and prints it. Prints \verb|"Factory is empty."| if the there is no product in the factory. \hfill \\ [10pt]
     \framebox[2cm][c]{RF}
     \vspace{7pt}
@@ -97,135 +104,51 @@ In Rumeli Hisarustu, a factory called CMPE250 Factory produces essential product
     \framebox[2cm][c]{RL}
     \vspace{7pt}
     
-    \item \textbf{Find - } Prints the product with the given \texttt{product$_{id}$}. If the product is not in the factory line, prints \verb|"Product not found."|\hfill \\ [10pt]
+    \item \textbf{Remove Index - } Removes the product in the given \texttt{index} and prints it. Prints \verb|"Index out of bounds."| if the index is out of bounds.   \hfill \\ [10pt]
+    \framebox[3cm][c]{RI\hspace{15pt}index}
+    \vspace{7pt}
+    
+    \item \textbf{Remove Product - } Removes the first occurrence of the product with the given \texttt{value} and prints it. Prints \verb|"Product not found."| if the product is not in the factory line. \hfill \\ [10pt]
+    \framebox[4cm][c]{RI\hspace{15pt}product$_{value}$}
+    \vspace{7pt}
+    
+    \item \textbf{Find - } Prints the product with the given \texttt{product$_{id}$}. Prints \verb|"Product not found."| if the product is not in the factory line. \hfill \\ [10pt]
     \framebox[4cm][c]{F\hspace{15pt}product$_{id}$}
     \vspace{7pt}
     
-    \item \textbf{Update - } Updates the \texttt{value} of the product with the given \texttt{product$_{id}$} to \texttt{product$_{value}$}. If the product is not in the factory line, prints \verb|"Product not found."|\hfill \\ [10pt]
-    \framebox[6cm][c]{U\hspace{15pt}product$_{id}$\hspace{15pt}product$_{value}$}
-    \vspace{7pt}
-    
-    \item \textbf{Get - } Prints the product in the given \texttt{index}.  If the index is out of bounds, prints \verb|"Index out of bounds."| \hfill \\ [10pt]
+    \item \textbf{Get - } Prints the product in the given \texttt{index}. Prints \verb|"Index out of bounds."| if the index is out of bounds. \hfill \\ [10pt]
     \framebox[3cm][c]{G\hspace{15pt}index}
     \vspace{7pt}
     
-    \item \textbf{Print - } Prints the entire factory line. \hfill \\ [10pt]
+    \item \textbf{Update - } Updates the \texttt{value} of the product with the given \texttt{product$_{id}$} to \texttt{product$_{value}$}. Prints \verb|"Product not found."| if the product is not in the factory line. \hfill \\ [10pt]
+    \framebox[6cm][c]{U\hspace{15pt}product$_{id}$\hspace{15pt}product$_{value}$}
+    \vspace{7pt}
+
+    \item \textbf{Filter Duplicates - } Removes products such that after the filtering process there is only a single occurrence of each product in the factory line. In the context of this method, duplicate products are products with equal \texttt{value} fields, the \texttt{id} fields are of course unique. \hfill \\ [10pt]
+    \framebox[2cm][c]{FD}
+    \vspace{7pt}
+
+    \item \textbf{Reverse - } Reverses the factory line. \hfill \\ [10pt]
+    \framebox[2cm][c]{R}
+    \vspace{7pt}
+    
+    \item \textbf{Print - } Prints the factory line. \hfill \\ [10pt]
     \framebox[2cm][c]{P}
     \vspace{7pt}
     
 \end{itemize}
 
-
-
-% P
-% AF 1 1
-% AL 2 4
-% AL 3 9
-% RF
-% RL
-% P
-% AF 4 20
-% AL 5 1
-% P
-% F 2
-% F 10
-% U 4 13
-% U 1 30
-% G 1
-% G 3
-% RF
-% RF
-% RF
-% RF
-% RL
-
-
-% {}
-% (1, 1)
-% (3, 9)
-% {(2, 4)}
-% {(4, 20),(2, 4),(5, 1)}
-% (2, 4)
-% Product not found.
-% (4, 20)
-% Product not found.
-% (2, 4)
-% Index out of bounds.
-% (4, 13)
-% (2, 4)
-% (5, 1)
-% Factory is empty.
-% Factory is empty.
-
-
-\begin{table}[H]
-    \centering
-    \begin{tabular}{||p{1.5cm}|p{3.8cm}|p{7cm}||}
-        \hline
-        \hline
-        \textbf{Input} & \textbf{Corresponding \newline Output Line} & \textbf{Explanation}  \\
-        \hline
-        \hline
-        P & \{\} & Initially the factory line is empty.  \\ 
-        \hline
-        AF 1 1 & & \texttt{(1,1)} is added to the front. \\
-        \hline
-        AL 2 4 & & \texttt{(2,4)} is added to the end. \\
-        \hline
-        AL 3 9 & & \texttt{(3,9)} is added to the end. \\
-        \hline
-        RF & (1, 1) & First item is removed and printed. \\
-        \hline
-        RL & (3, 9) & Last item is removed and printed. \\
-        \hline
-        P & \{(2, 4)\} & Factory line is printed. \\
-        \hline
-        AF 4 20 & & \texttt{(4,20)} is added to the front. \\
-        \hline
-        AL 5 1 & & \texttt{(5,1)} is added to the end. \\
-        \hline
-        P & \{(4, 20),(2, 4),(5, 1)\} & Factory line is printed. \\
-        \hline
-        F 2 & (2, 4) & Product with \texttt{id} 2 is found and printed. \\
-        \hline
-        F 10 & Product not found. & Product with \texttt{id} does not exist. \\
-        \hline
-        U 4 13 & (4, 20) & \texttt{value} of the product with \texttt{id} 4 
-        is updated to 13. The previous product is printed. \\
-        \hline
-        U 1 30 & Product not found. & Product with \texttt{id} 1 does not exist.\\
-        \hline
-        G 1 & (2, 4) & Product with \texttt{index} 1 is printed. \\
-        \hline
-        G 3 & Index out of bounds. & The factory line has 3 products so \texttt{index} 3 is out of bounds. \\
-        \hline
-        RF & (4, 13) & First item is removed and printed. \\
-        \hline
-        RF & (2, 4) & Same as above. \\
-        \hline
-        RF &  (5, 1) & Same as above. \\
-        \hline
-        RF & Factory is empty. & Cannot remove from the front since the factory is empty. \\
-        \hline
-        RL & Factory is empty. & Same as above, but now it's the end. \\
-        \hline
-        \hline
-    \end{tabular}
-    \caption{Example Input}
-    \label{tab:my_label}
-\end{table}
-\vspace{-10pt}
 Input file path will be given as the first program argument.
 
 \subsection{Output}
 
 \begin{itemize}
     \item \textbf{Product - } Products will be printed in the format below. \\ [10pt]
-    \framebox[5cm][c]{(product$_{id}$,\hspace{5pt}product$_{value}$)}
+    \framebox[5.5cm][c]{(\hspace{5pt}product$_{id}$,\hspace{5pt}product$_{value}$\hspace{5pt})}
     \vspace{7pt}
     
     \item \textbf{Factory Line - } Factory line will be printed in the format below. \\ [10pt]
-    \framebox[8cm][c]{\{ product$_1$,\hspace{10pt}product$_2$,\hspace{4pt} \ldots   \hspace{2pt}, \hspace{3pt}product$_n$ \}}
+    \framebox[8cm][c]{\{ product$_1$,\hspace{10pt}product$_2$,\hspace{4pt} \ldots   \hspace{2pt},\hspace{10pt}product$_n$ \}}
     \vspace{7pt}
     
 \end{itemize}
@@ -236,13 +159,152 @@ Output file path will be given as the second program argument.
 
 \section{Submission}
 
-Your code will be graded automatically. So it's important that you follow the submission instructions. First, all 5 of your source files, and nothing more, should be collected under \verb|Project1/src|. Then, you should zip the \verb|Project1| folder and rename it to \texttt{p1\_<student$_{id}$>.zip}. This zip file will be submitted through moodle. \\
+Your project will be graded automatically. So it's important that you carefully follow the submission instructions. First, all 5 of your source files, and nothing more, should be collected under \verb|Project1/src|. Then, you should zip the \verb|Project1| folder and rename it to \texttt{p1\_<student$_{id}$>.zip} (e.g., \verb|p1_2020400999.zip|). This zip file will be submitted through moodle. \\
 
-Please make sure that your program compiles and runs from the terminal line with the \texttt{javac} and \texttt{java} commands respectively. The target version is 17. 
+Your program must be runnable through the terminal. We will compile your code with the \texttt{javac} command. The target version is 17. Hence, it is imperative that your project structure is correct, otherwise you will not be able to get any points from the automatic grading system.  The compiled program will be run using \texttt{java} command. Your program should be able to run with full-path arguments.
 
 \section{Grading}
 
 Grading of this project is based on the automatic compilation and run and the success of your code in test cases. If your code compiles and runs with no error, then you will get 10\% of the project grade. 40\% of the grade will come from unit tests. We will test each method implementation for the methods in the \texttt{Factory} interface. Each method implementation will have equal weight. The rest of your grade will be the sum of collected points from each test case. Each test case will have equal weight. Maximum project grade is 100\%.
+
+
+\iffalse
+
+P
+RF
+RL
+AF 3 9
+A 0 2 4
+AL 5 25
+A 0 1 1
+A 3 4 16
+AL 6 36
+AF 7 30
+P
+
+
+
+F 3
+F 20
+U 4 9
+U 13 21
+G 0
+G 17
+U 1 36
+A 21 21 21
+P
+FD
+P
+R
+RP 9
+RP 13
+RL
+RI 2
+RF
+RI 4
+
+\fi
+
+\vspace{-0.5cm}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{||p{1.6cm}|p{4cm}|p{8.5cm}||}
+        \hline
+        \hline
+        \textbf{Input} & \textbf{Corresponding \newline Output Line} & \textbf{Explanation}  \\
+        \hline
+        \hline
+        P & \{\} & Initially the factory line is empty.  \\ 
+        \hline
+        
+        RF & Factory is empty. & Cannot remove from the front since the factory is empty. \\
+        \hline
+        
+        RL & Factory is empty. & Same as above, but now it's the end. \\
+        \hline
+        
+        AF 3 9 & & \texttt{(3,9)} is added to the front. \\
+        \hline
+        
+        A 0 2 4 & & \texttt{(2,4)} is inserted to \texttt{index} 0. \\
+        \hline
+        
+        AL 5 25 & & \texttt{(5,25)} is added to the end. \\
+        \hline
+        
+        A 0 1 1 & & \texttt{(1,1)} is inserted to \texttt{index} 0. \\
+        \hline
+        
+        A 3 4 16 & & \texttt{(4,16)} is inserted to \texttt{index} 3. \\
+        \hline
+    
+        AL 6 36 & & \textt{(6,36)} is added to the end. \\
+        \hline
+        
+        AF 7 30 & & \texttt{(7,30)} is added to the front. \\
+        \hline
+        
+        P & \{(7, 30),(1, 1),(2, 4),(3, 9),\newline(4, 16),(5, 25),(6, 36)\} & Factory line is printed. \\
+        \hline
+        
+        F 3 & (3, 9) & Product with \texttt{id} 3 is found and printed. \\
+        \hline
+        
+        F 20 & Product not found. & Product with \texttt{id} 20 does not exist. \\
+        \hline
+        
+        U 4 9 & (4, 16) & \texttt{value} of the product with \texttt{id} 4 is updated to 9. The previous product is printed. \\
+        \hline
+        
+        U 13 21 & Product not found. & Product with \texttt{id} 13 does not exist.\\
+        \hline
+        
+        G 0 & (7, 30) & Product with \texttt{index} 0 is printed. \\
+        \hline
+        
+        G 17 & Index out of bounds. & The factory line has 7 products so \texttt{index} 17 is out of bounds. \\
+        \hline
+        
+        U 1 36 & (1, 1) & \texttt{value} of the product with \texttt{id} 1 is updated to 36. The previous product is printed. \\
+        \hline
+        
+        A 21 21 21 & Index out of bounds. & There is no product at \texttt{index} 21. \\
+        \hline
+        
+        FD & 2 & All duplicates are removed from the factory line. In this case it was \texttt{(4,9)} and \texttt{(6,36)}. Prints the number of duplicates removed. \\
+        \hline
+        
+        P &  \{(7, 30),(1, 36),(2, 4),\newline(3, 9),(5, 25)\} & Prints the factory line. \\
+        \hline
+        
+        R &  \{(5, 25),(3, 9),(2, 4),\newline(1, 36),(7, 30)\} & Reverses the factory line. Prints the new version. \\
+        \hline
+        
+        RP 9 & (3, 9) & Removes the first product with \texttt{value} 9. \\
+        \hline
+        
+        RP 13 & Product not found. & No product has \texttt{value} 13. \\
+        \hline
+        
+        RL & (7, 30) & Removes and prints the last product. \\
+        \hline
+        
+        RI 2 & (1, 36) & Removes and prints the product at \texttt{index} 2. \\
+        \hline
+        
+        RF & (5, 25) & Removes and prints the first product. \\
+        \hline
+        
+        RI 4 & Index out of bounds. & The factory line has a single product so \texttt{index} 4 is out of bounds. \\
+        \hline
+        
+        \hline
+    \end{tabular}
+    \caption{Line by line analysis of example input}
+    \label{tab:my_label}
+\end{table}
+
+
 
 \section{Warnings}
 
@@ -256,9 +318,7 @@ Grading of this project is based on the automatic compilation and run and the su
 
 \item Do not add any files to the source code except \texttt{Holder.java}, \texttt{Product.java}, \texttt{Factory.java}, \texttt{FactoryImpl.java}, and \texttt{Project1.java}. 
 
-\item Make sure that each method in the \texttt{Factory} interface does the operations it is supposed to do. These methods will be individually unit tested. For example, if there is only one product in the factory and either \verb|RF| or \verb|RL| are called, then both \texttt{first} and \texttt{last} fields should be set to \texttt{null}.
-
-\item All method and field names must be exact. 
+\item Make sure that each method in the \texttt{Factory} interface does the operations it is supposed to do. These methods will be individually unit tested. For example, if there is only one product in the factory and either \verb|RF| or \verb|RL| is called, then both \texttt{first} and \texttt{last} fields should be set to \texttt{null}. So basically the three mandatory fields should always be correctly set.
 
 \item Make sure that the white-spaces in your output is correct. You can disregard the ones at the end of the line.
 
