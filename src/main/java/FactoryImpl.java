@@ -231,7 +231,7 @@ public class FactoryImpl implements Factory {
     }
 
     private void checkProductIndex(int index) {
-        if (!(index >= 0 && index < size))
+        if (!(index >= 0 && index <= size))
             throw new IndexOutOfBoundsException("Index: "+index+", Size: "+size);
     }
 
