@@ -17,6 +17,16 @@ public interface Factory {
     void addLast(Product product);
 
     /**
+     * Insert the {@code product} at the specified position in this factory line.
+     * Shifts the products currently at and to the right of that position.
+     *
+     * @param index index at which the product is to be inserted
+     * @param product the product to be inserted
+     * @throws IndexOutOfBoundsException {@inheritDoc}
+     */
+    void add(int index, Product product) throws IndexOutOfBoundsException;
+
+    /**
      * Removes and returns the first product from this factory line.
      *
      * @return  the first product from this factory line
@@ -31,45 +41,6 @@ public interface Factory {
      * @throws  NoSuchElementException if the line is empty
      */
     Product removeLast() throws NoSuchElementException;
-
-    /**
-     * Finds and returns the product with the specified {@code id}.
-     *
-     * @param   id id of the product
-     * @return  the product with the specified id
-     * @throws  NoSuchElementException if the product does not exist
-     */
-    Product find(int id) throws NoSuchElementException;
-
-    /**
-     * Updates the product value with {@code id} in this factory line
-     * with the given {@code newValue}.
-     *
-     * @param   id    id of the product to update
-     * @param   value new value for the specified product
-     * @return  the previous product with {@code id}
-     * @throws  NoSuchElementException if the product does not exist
-     */
-    Product update(int id, Integer value) throws NoSuchElementException;
-
-    /**
-     * Returns the product at the specified position in this factory line.
-     *
-     * @param   index index of the product to return
-     * @return  the product at the specified position in this factory line
-     * @throws  IndexOutOfBoundsException {@inheritDoc}
-     */
-    Product get(int index) throws IndexOutOfBoundsException;
-
-    /**
-     * Insert the {@code product} at the specified position in this factory line.
-     * Shifts the products currently at and to the right of that position.
-     *
-     * @param index index at which the product is to be inserted
-     * @param product the product to be inserted
-     * @throws IndexOutOfBoundsException {@inheritDoc}
-     */
-    void add(int index, Product product) throws IndexOutOfBoundsException;
 
     /**
      * Removes and returns the product at the specified position in this
@@ -93,14 +64,41 @@ public interface Factory {
      * @return the removed {@code product}
      * @throws NoSuchElementException if the product with the given
      *              {@code value} does not exist
-     *
-     *
      */
     Product removeProduct(int value) throws NoSuchElementException;
 
     /**
+     * Finds and returns the product with the specified {@code id}.
+     *
+     * @param   id id of the product
+     * @return  the product with the specified id
+     * @throws  NoSuchElementException if the product does not exist
+     */
+    Product find(int id) throws NoSuchElementException;
+
+    /**
+     * Returns the product at the specified position in this factory line.
+     *
+     * @param   index index of the product to return
+     * @return  the product at the specified position in this factory line
+     * @throws  IndexOutOfBoundsException {@inheritDoc}
+     */
+    Product get(int index) throws IndexOutOfBoundsException;
+
+    /**
+     * Updates the product value with {@code id} in this factory line
+     * with the given {@code newValue}.
+     *
+     * @param   id    id of the product to update
+     * @param   newValue new value for the specified product
+     * @return  the previous product with {@code id}
+     * @throws  NoSuchElementException if the product does not exist
+     */
+    Product update(int id, Integer newValue) throws NoSuchElementException;
+
+    /**
      * Filters the factory line such that every duplicate product is removed.
-     * Duplicate products are products with the same value in this context.
+     * In this context, duplicate products are products with the same value.
      *
      * @return number of removed products
      */
@@ -110,6 +108,5 @@ public interface Factory {
      * Reverses the factory line.
      */
     void reverse();
-
 
 }
