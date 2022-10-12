@@ -25,5 +25,5 @@
 
 
 
-#### Check the [description](./desc/Project_1_CmpE_250__Data_Structures_and_Algorithms__Fall_2022.pdf) to try out this project. 
+#### Check the [description](./desc/p1_description.pdf) to try out this project. 
 
