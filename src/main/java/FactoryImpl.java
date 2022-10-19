@@ -161,7 +161,7 @@ public class FactoryImpl implements Factory {
 
     @Override
     public void add(int index, Product product) throws IndexOutOfBoundsException {
-        checkProductIndex(index);
+        checkPositionIndex(index);
 
         if (index == size)
             linkLast(product);
@@ -230,9 +230,14 @@ public class FactoryImpl implements Factory {
         return x;
     }
 
-    private void checkProductIndex(int index) {
+    private void checkPositionIndex(int index) {
         if (!(index >= 0 && index <= size))
-            throw new IndexOutOfBoundsException("Index: "+index+", Size: "+size);
+            throw new IndexOutOfBoundsException();
+    }
+
+    private void checkProductIndex(int index) {
+        if (!(index >= 0 && index < size))
+            throw new IndexOutOfBoundsException();
     }
 
     public String toString() {
