@@ -132,7 +132,8 @@ public class FactoryImpl implements Factory {
         int removed = 0;
         for (Holder x = first; x != null; x = x.getNextHolder()) {
             if (values.contains(x.getProduct().getValue())) {
-                Holder temp = new Holder(null, null, x.getNextHolder()); // unlink() sets the next holder as null
+                // unlink() sets the next holder as null
+                Holder temp = new Holder(null, null, x.getNextHolder());
                 unlink(x);
                 x = temp;
                 removed++;
@@ -147,14 +148,12 @@ public class FactoryImpl implements Factory {
     public void reverse() {
         final Holder f = first;
         Holder temp, next;
-
         for (Holder x = first; x != null; x = next) {
             next = x.getNextHolder(); // otherwise we lose the nextHolder
             temp = x.getPreviousHolder();
             x.setPreviousHolder(x.getNextHolder());
             x.setNextHolder(temp);
         }
-
         first = last;
         last = f;
     }
@@ -162,7 +161,6 @@ public class FactoryImpl implements Factory {
     @Override
     public void add(int index, Product product) throws IndexOutOfBoundsException {
         checkPositionIndex(index);
-
         if (index == size)
             linkLast(product);
         else
@@ -173,21 +171,18 @@ public class FactoryImpl implements Factory {
         final Product product = holder.getProduct();
         final Holder previousHolder = holder.getPreviousHolder();
         final Holder nextHolder = holder.getNextHolder();
-
         if (previousHolder == null)
             first = nextHolder;
         else {
             previousHolder.setNextHolder(nextHolder);
             holder.setPreviousHolder(null);
         }
-
-        if (nextHolder == null) {
+        if (nextHolder == null)
             last = previousHolder;
-        } else {
+        else {
             nextHolder.setPreviousHolder(previousHolder);
             holder.setNextHolder(null);
         }
-
         holder.setProduct(null);
         size--;
         return product;
@@ -217,7 +212,6 @@ public class FactoryImpl implements Factory {
 
     private Holder node(int index) {
         Holder x;
-
         if (index < (size >> 1)) {
             x = first;
             for (int i = 0; i < index; i++)
@@ -243,11 +237,9 @@ public class FactoryImpl implements Factory {
     public String toString() {
         if (size == 0)
             return "{}";
-
         StringBuilder sb = new StringBuilder("{");
-        for (Holder x = first; x != null; x = x.getNextHolder()) {
+        for (Holder x = first; x != null; x = x.getNextHolder())
             sb.append(x).append(",");
-        }
         sb.delete(sb.length()-1, sb.length());
         sb.append("}");
         return sb.toString();
