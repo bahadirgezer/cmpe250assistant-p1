@@ -5,6 +5,8 @@ import org.junit.jupiter.params.provider.MethodSource;
 import java.util.NoSuchElementException;
 import java.util.stream.Stream;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 /*
     addFirst        empty factory
@@ -51,195 +53,40 @@ import java.util.stream.Stream;
                     2 product factory (index 0)
                     2 product factory (index 1)
  */
-class FactoryImplTest {
-
-    @BeforeEach
-    void setUp() {
-
-    }
-
-    @AfterEach
-    void tearDown() {
-
-    }
 
 
-    static class AddFirst {
-
-        @Test
-        @MethodSource("emptyFactoryProvider")
-        @DisplayName("Add First Test")
-        void emptyFactoryTest(FactoryImpl testFactory, CorrectFactory correctFactory) {
-
+public class FactoryImplTest {
+    /*
+    // Use the @BeforeAll annotation to specify that this method should be run
+    // once before all of the test methods in the class.
+    @BeforeAll
+    public static void setUp(String[] args) {
+        if (args.length < 1) {
+            System.out.println("Please specify the student's name as the first argument");
+            return;
         }
 
-        @Test
-        @MethodSource("oneProductFactoryProvider")
-        @DisplayName("Add First Test")
-        void oneProductFactoryTest(FactoryImpl testFactory, CorrectFactory correctFactory) {
+        String studentName = args[0];
 
-        }
+        // Create an instance of the correct class
+        FactoryImpl factory = new FactoryImpl();
 
-        @Test
-        @MethodSource("twoProductFactoryProvider")
-        @DisplayName("Add First Test")
-        void twoProductFactoryTest(FactoryImpl testFactory, CorrectFactory correctFactory) {
-
-        }
-
-        @Test
-        @MethodSource("fullFactoryProvider")
-        @DisplayName("Add First Test")
-        void fullFactoryTest(FactoryImpl testFactory, CorrectFactory correctFactory) {
-
-        }
-
+        // Create an instance of the student submission class using the fully qualified class name
+        // constructed from the student's name
+        // e.g. "submssions.StudentName.Project1.src.FactoryImpl"
     }
 
-
-    static Arguments emptyFactoryProvider() {
-        return  Arguments.of(new FactoryImpl(), new CorrectFactory());
+    // Use the @Test annotation to specify that this method is a test method
+    @Test
+    public void testStudentSubmission() {
+        // Test the student submission
+        // ...
     }
-
-    static Arguments oneProductFactoryProvider() {
-        return Arguments.of(
-        );
-    }
-
-    static Stream<FactoryImpl> productProvider() {
-        return Stream.empty();
-    }
-
-
 }
 
-class CorrectFactory {
-
-    Holder first;
-
-    Holder last;
-
-    Integer size;
-
-    public CorrectFactory() {
-        first = null;
-        last = null;
-        size = 0;
-    }
-
-    public void addFirst(Product product) {
-        final Holder f = first;
-        final Holder newHolder = new Holder(null, product, f);
-        first = newHolder;
-        if (f == null)
-            last = newHolder;
-        else
-            f.setPreviousHolder(newHolder);
-        size++;
-    }
-
-    public void addLast(Product product) {
-        final Holder l = last;
-        final Holder newHolder = new Holder(l, product, null);
-        last = newHolder;
-        if (l == null)
-            first = newHolder;
-        else
-            l.setNextHolder(newHolder);
-        size++;
-    }
-
-    public Product removeFirst() throws NoSuchElementException {
-        final Holder f = first;
-        if (f == null)
-            throw new NoSuchElementException();
-        final Product product = f.getProduct();
-        final Holder next = f.getNextHolder();
-        f.setProduct(null);
-        f.setNextHolder(null);
-        first = next;
-        if (next == null)
-            last = null;
-        else
-            next.setPreviousHolder(null);
-        size--;
-        return product;
-    }
-
-    public Product removeLast() throws NoSuchElementException {
-        final Holder l = last;
-        if (l == null)
-            throw new NoSuchElementException();
-        final Product product = l.getProduct();
-        final Holder prev = l.getPreviousHolder();
-        l.setProduct(null);
-        l.setPreviousHolder(null);
-        last = prev;
-        if (prev == null)
-            first = null;
-        else
-            prev.setNextHolder(null);
-        size--;
-        return product;
-    }
-
-    public Product find(int id) throws NoSuchElementException {
-        for (Holder x = first; x != null; x = x.getNextHolder()) {
-            if (x.getProduct() == null)
-                continue;
-            if (x.getProduct().getId() == id)
-                return x.getProduct();
-        }
-        throw new NoSuchElementException();
-    }
-
-    public Product update(int id, Integer value) throws NoSuchElementException {
-        for (Holder x = first; x != null; x = x.getNextHolder()) {
-            if (x.getProduct() == null)
-                continue;
-            if (x.getProduct().getId() == id) {
-                final Product p = new Product(
-                        x.getProduct().getId(),
-                        x.getProduct().getValue());
-                x.getProduct().setValue(value);
-                return p;
-            }
-        }
-        throw new NoSuchElementException();
-    }
-
-    public Product get(int index) throws IndexOutOfBoundsException {
-        if (!(index >= 0 && index < size))
-            throw new IndexOutOfBoundsException("Index: "+index+", Size: "+size);
-
-        Holder x;
-        if (index < (size >> 1)) {
-            x = first;
-            for (int i = 0; i < index; i++)
-                x = x.getNextHolder();
-        } else {
-            x = last;
-            for (int i = size - 1; i > index; i--)
-                x = x.getPreviousHolder();
-        }
-        return x.getProduct();
-    }
-
-    public String toString() {
-        if (size == 0)
-            return "{}";
-
-        StringBuilder sb = new StringBuilder("{");
-        for (Holder x = first; x != null; x = x.getNextHolder()) {
-            sb.append(x).append(",");
-        }
-        sb.delete(sb.length()-1, sb.length());
-        sb.append("}");
-        return sb.toString();
-    }
+public class FactoryImplTest {
 
 }
-
 
 
 /*
@@ -332,3 +179,4 @@ public class CalculatorTest {
   }
 }
  */
+}

@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="CMPE250_P1:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="5231961e-b7f1-41b7-8444-a52a3eda6fa1" name="Changes" comment="Updated the desciption">
+    <list default="true" id="5231961e-b7f1-41b7-8444-a52a3eda6fa1" name="Changes" comment="Refactored for best practices.">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/CMPE250_P1_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/input.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/output.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMPE250_P1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CMPE250_P1.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/input.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/output.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FactoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FactoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Project1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Project1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/FactoryImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/FactoryImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +29,7 @@
         <option value="Interface" />
         <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -36,27 +48,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/gezer/_boun/5.Donem/250Assistant/project1/revisions/CMPE250_P1&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "create.test.in.the.same.root": "true",
+    "last_opened_file_path": "/Users/gezer/_boun/5.Donem/250Assistant/project1/revisions/CMPE250_P1",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -74,7 +87,14 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.P1_ARGS_RUN">
+  <component name="RunManager" selected="Python.output">
+    <configuration name="ERRORED" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Project1" />
+      <module name="CMPE250_P1" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="P1_ARGS_RUN" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Project1" />
       <module name="CMPE250_P1" />
@@ -93,12 +113,37 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="output" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="CMPE250_P1" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/main/resources" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/main/resources/output.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Application.P1_ARGS_RUN" />
+      <item itemvalue="Application.ERRORED" />
       <item itemvalue="JUnit.FactoryImplTest.initializeFactory" />
+      <item itemvalue="Python.output" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.output" />
         <item itemvalue="JUnit.FactoryImplTest.initializeFactory" />
       </list>
     </recent_temporary>
@@ -113,7 +158,18 @@
       <updated>1665230236263</updated>
       <workItem from="1665230237859" duration="46749000" />
       <workItem from="1665385926264" duration="30477000" />
-      <workItem from="1665574171536" duration="343000" />
+      <workItem from="1665574171536" duration="2552000" />
+      <workItem from="1666183158393" duration="1755000" />
+      <workItem from="1666194213226" duration="1830000" />
+      <workItem from="1666208548162" duration="8048000" />
+      <workItem from="1666358663296" duration="302000" />
+      <workItem from="1666378335732" duration="599000" />
+      <workItem from="1666549377192" duration="1342000" />
+      <workItem from="1666634067657" duration="540000" />
+      <workItem from="1666640157442" duration="1222000" />
+      <workItem from="1668439869155" duration="2109000" />
+      <workItem from="1670858194573" duration="9093000" />
+      <workItem from="1670963309417" duration="3665000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1665230615497</created>
@@ -234,7 +290,28 @@
       <option name="project" value="LOCAL" />
       <updated>1665556259091</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Changed the index out of bounds to accept indices equaling size. Now the add command can be used for adding elements to the very end.">
+      <created>1665574862019</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1665574862019</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Fixed the index check issue.">
+      <created>1666183683775</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1666183683775</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Refactored for best practices.">
+      <created>1666250478484</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1666250478484</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,7 +346,10 @@
     <MESSAGE value="Ready to submit." />
     <MESSAGE value="Small revisions to the Factory interface." />
     <MESSAGE value="Updated the desciption" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated the desciption" />
+    <MESSAGE value="Changed the index out of bounds to accept indices equaling size. Now the add command can be used for adding elements to the very end." />
+    <MESSAGE value="Fixed the index check issue." />
+    <MESSAGE value="Refactored for best practices." />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored for best practices." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -278,26 +358,14 @@
           <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
           <option name="timeStamp" value="3" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/FactoryImpl.java</url>
-          <line>150</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Project1.java</url>
-          <line>131</line>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/FactoryImpl.java</url>
-          <line>118</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/CMPE250_P1$output.coverage" NAME="output Coverage Results" MODIFIED="1670968038512" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/main/resources" />
   </component>
 </project>

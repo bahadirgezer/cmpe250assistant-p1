@@ -4,6 +4,7 @@ import java.util.NoSuchElementException;
 public class Project1 {
     public static void main(String[] args) {
 
+
         //INIT
         BufferedWriter bw = null;
         BufferedReader br = null;
@@ -20,6 +21,11 @@ public class Project1 {
         } catch (IOException e) {
             System.err.println("Exception caught: Output file could not be opened.");
             System.exit(1);
+
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.err.println("Exception caught: Input and output file paths must be provided.");
+            System.exit(1);
+
         }
 
         StringBuilder sb = new StringBuilder();
@@ -29,6 +35,7 @@ public class Project1 {
         String indexOutOfBounds = "Index out of bounds.";
         String line;
 
+        Long tic = System.currentTimeMillis();
         // INPUT
         try {
             while ((line = br.readLine()) != null) {
@@ -125,6 +132,7 @@ public class Project1 {
                         } catch (IndexOutOfBoundsException e) {
                             sb.append(indexOutOfBounds).append(System.lineSeparator());
                         }
+
                         break;
                     case "P":
                         sb.append(factory).append(System.lineSeparator());
@@ -140,6 +148,7 @@ public class Project1 {
                         } catch (IndexOutOfBoundsException e) {
                             sb.append(indexOutOfBounds).append(System.lineSeparator());
                         }
+
                         break;
                     case "RP":
                         try {
@@ -175,12 +184,23 @@ public class Project1 {
                         } catch (IndexOutOfBoundsException e) {
                             sb.append(indexOutOfBounds).append(System.lineSeparator());
                         }
+
                         break;
                 }
             }
+            Long toc = System.currentTimeMillis();
+            System.out.println("Time elapsed: " + (toc - tic) + " ms");
+
         } catch (IOException e) {
             System.err.println("Exception caught: Input file could not be read.");
             System.exit(1);
+
+        } catch (NumberFormatException e) {
+            System.err.println("Exception caught: Inputs must be integer values.");
+
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.err.println("Exception caught: Incorrect input format.");
+
         }
 
         try {
@@ -193,11 +213,18 @@ public class Project1 {
         //OUTPUT
         try {
             bw.write(sb.toString());
-            bw.flush();
+        } catch (IOException e) {
+            System.err.println("Exception caught: Output file could not be written.");
+            System.exit(1);
+        }
+
+        try {
             bw.close();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            System.err.println("Exception caught: Output file could not be closed.");
+            System.exit(1);
         }
+
 
     }
 }
